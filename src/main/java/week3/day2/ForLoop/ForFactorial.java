@@ -1,8 +1,8 @@
-package week3.day2;
+package week3.day2.ForLoop;
 
 import java.util.Scanner;
 
-public class Factorial {
+public class ForFactorial {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
