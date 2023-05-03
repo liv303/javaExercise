@@ -1,5 +1,5 @@
 package week3.day3.While;
-//static method안 쓴 코드
+//static method 안 쓴 코드
 public class isZeroOrFive2 {
     public static void main(String[] args) {
         int num = 555;

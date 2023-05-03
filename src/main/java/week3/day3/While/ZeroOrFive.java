@@ -4,11 +4,11 @@ public class ZeroOrFive {
     public static boolean isZeroOrFive(int num) {
         //자릿수만큼 반복하기
         while (num > 0) {
-            int remainder = num % 10;   // 나머지 먼저 구해야 함
+            int remainder = num % 10;   // 가장 낮은 자릿수의 수를 구함
             if (remainder % 5 == 0) {
                 return false;
             }
-            num /= 10;
+            num /= 10;  // 가장 낮은 자릿수를 버림
         }
         return true;
     }
