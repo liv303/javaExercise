@@ -10,37 +10,29 @@ public class Codeup1097 {
 
         //n개의 좌표를 입력 받아 배열에 할당하기
         Scanner sc = new Scanner(System.in);
-        int xLoc, yLoc;
 
         for (int i = 0; i < 19; i++) {
-            xLoc = i;
             for (int j = 0; j < 19; j++) {
-                yLoc = j;
                 arr[i][j] = sc.nextInt();
             }
         }
 
+
         //십자 뒤집기
         int cycle = sc.nextInt();
         for (int k = 1; k <= cycle; k++) {
-            xLoc = sc.nextInt();
-            yLoc = sc.nextInt();
+            int xLoc = sc.nextInt() - 1;    // 좌표는 1부터 시작하므로 -1
+            int yLoc = sc.nextInt() - 1;
 
-            for (int i = 1; i < 20; i++) {  // i행
-                if (xLoc == i) {
-                    for (int j = 1; j < 20; j++) {  // j열
-                        if (yLoc == j) {
-                            arr[i][yLoc] = arr[i][yLoc] == 1 ? 0 : 1; // xLoc 행 뒤집기
-                            arr[xLoc][j] = arr[xLoc][j] == 1 ? 0 : 1; // yLoc 열 뒤집기
-                        }
-                    }
-
-
-                } else {
-                    continue;
-                }
-
+            for (int i = 0; i < arr.length; i++) {  // x행 뒤집기: y열 고정
+                arr[xLoc][i] = arr[xLoc][i] == 1 ? 0 : 1;
             }
+
+            for (int i = 0; i < arr.length; i++) {  // y열 뒤집기: x열 고정
+                arr[i][yLoc] = arr[i][yLoc] == 1 ? 0 : 1;
+            }
+
+
         }
 
         // 결과 출력하기
